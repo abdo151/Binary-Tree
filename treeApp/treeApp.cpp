@@ -2,10 +2,28 @@
 //
 
 #include <iostream>
+using namespace std;
+#include"binarytree.h"
+void display(int x) {
+    cout << x << "\n";
 
+}
 int main()
 {
-    std::cout << "Hello World!\n";
+    Tree<int> t;
+    create_tree(&t);
+    int k [] = {32,43,22,6,99,-5};
+    tree_insertion_rec(&t, &k[3]);
+    tree_insertion_rec(&t , &k[2]);
+    tree_insertion_rec(&t , &k[1]);
+    tree_insertion_rec(&t, &k[5]);
+    tree_insertion_rec(&t, &k[0]);
+    travers_tree_rec2(&(t.Root), &display);
+    cout << "the tree size = " << tree_size(&t)<<"\n";
+    cout << "the tree depth = " << tree_depth(&t) << "\n";
+    system("pause>0");
+    return 0;
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
